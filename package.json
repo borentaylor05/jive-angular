@@ -1,7 +1,7 @@
 {
   "name": "jive-angular",
   "description": "Angular Template for Jive SDK Applications",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": "Taylor Boren",
   "bin": {
     "jive-angular-make": "lib/executable.js"
