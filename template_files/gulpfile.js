@@ -64,11 +64,11 @@ gulp.task('watch', function() {
 /* HTML *************/
 
 gulp.task('html', function(){
-  runSequence('html-files', 'html-resource-tags');
+  runSequence('html-files');
 });
 
 gulp.task('html-jive', function(){
-  runSequence('html-files', 'html-resource-tags-jive');
+  runSequence('html-files');
 });
 
 gulp.task('html-files', function() {
@@ -77,41 +77,6 @@ gulp.task('html-files', function() {
   return gulp.src(['app/index.html'])
     .pipe(gulp.dest('dist/'));
 });
-
-gulp.task('html-resource-tags', function () {
-  if(ENV === 'jive'){
-    return gulp.src('dist/index.html')
-      .pipe(inject(gulp.src(['./dist/js/*.js', './dist/css/*.css']), {
-        empty: true, // helpful when running "live" locally
-        addRootSlash: false }))
-      .pipe(gulp.dest('dist/'));
-  }
-  else{
-    return gulp.src('dist/index.html')
-      .pipe(inject(gulp.src(['./dist/js/*.js', './dist/css/*.css']), {
-        ignorePath: 'dist/',
-        empty: true, // helpful when running "live" locally
-        addRootSlash: true }))
-      .pipe(gulp.dest('dist/'));
-  }
-});
-
-gulp.task('html-resource-tags', function () {
-  return gulp.src('dist/index.html')
-    .pipe(inject(gulp.src(['./dist/js/*.js', './dist/css/*.css']), {
-      ignorePath: 'dist/',
-      empty: true, // helpful when running "live" locally
-      addRootSlash: true }))
-    .pipe(gulp.dest('dist/'));
-});
-
-gulp.task('html-resource-tags-jive', function(){
-  return gulp.src('dist/index.html')
-    .pipe(inject(gulp.src(['./dist/js/*.js', './dist/css/*.css']), {
-      empty: true, // helpful when running "live" locally
-      addRootSlash: false }))
-    .pipe(gulp.dest('dist/'));
-})
 
 gulp.task('templateCache', function() {
   return gulp.src(['app/**/*.svg', 'app/**/*.html', '!app/index.html'])
