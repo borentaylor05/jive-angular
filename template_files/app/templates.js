@@ -1,0 +1,3 @@
+'use strict'; module.exports = angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("components/header_footer/header_footer.html","<div class=\"wrapper\">\n  <h1>MAYBsE</h1>\n  <div ui-view></div>\n</div>");
+$templateCache.put("modules/jive/jive_home.html","<h1> {{ jiveCtrl.header }} </h1>\n\n<a ng-click=\"jiveCtrl.go()\"> sasadasddasdsd </a>");
+$templateCache.put("modules/jive/test.html","<h2>REMOVE THIS FILE</h2>");}]);

@@ -1,0 +1,10 @@
+body{
+  background-color: $default-bg-color;
+  font-family: $font;
+}
+
+h1{
+  color: $primary;
+  &.primary{ color: $primary; }
+  &.secondary{ color: $secondary; }
+}
