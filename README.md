@@ -18,7 +18,7 @@ Once installed:
 1. Navigate to: `./[YourAppName]/apps/[YourAppName]/public`
 2. Run: `npm install`
 3. Run; `gulp` or `gulp jive`
-  * The default gulp task:
+
     * Precompiles SASS from `app/scss`
     * Transpiles ES2015 in app/js down to ES5
     * Puts all HTML / CSS / JS resources in dist/
@@ -27,7 +27,7 @@ Once installed:
     * Implements a JS linter
     * Implements a watcher so steps 1 and 2 happen on every save
 
-** There are several things going on in gulpfile.js so be sure to check it out! **
+**There are several things going on in gulpfile.js so be sure to check it out!**
 
 ### 'gulp' vs 'gulp jive'
 
@@ -35,13 +35,13 @@ Once installed:
 
 ### Development setup
 
-** This assumes your app is already installed on your Jive instance **
+**This assumes your app is already installed on your Jive instance**
 
 1. Follow the normal Jive App development process by running `npm start` from your project home directory.
 2. Navigate to from your app root to `apps/[YourAppName]/public/` and run `gulp`.
 
 ### Angular App Basics
-** The newly created public directory uses gulp to set up a template for an Angular SPA using ui-router **
+**The newly created public directory uses gulp to set up a template for an Angular SPA using ui-router**
 
 The template contains:
 
@@ -54,7 +54,7 @@ The template contains:
 
 # How It Works
 
-** The command line function above does the following: **
+**The command line function above does the following:**
 
 1. Creates a new directory named [YourAppName] in your current working directory.
 2. Creates a jive app titled [YourAppName] by finding and executing the jive-sdk executable.
