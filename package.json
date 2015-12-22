@@ -14,7 +14,7 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "karma start",
+    "test": "./node_modules/.bin/babel -d lib src/ && mocha specs --reporter nyan",
     "prepublish": "./node_modules/.bin/babel -d lib src/"
   },
   "repository": {
@@ -40,6 +40,13 @@
     "babel-cli": "^6.3.17",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
-    "es6-template-strings": "^2.0.0"
+    "browserify-istanbul": "^0.2.1",
+    "chai": "1.10.0",
+    "chai-fs": "^0.1.0",
+    "es6-template-strings": "^2.0.0",
+    "eslint": "^1.10.3",
+    "fs-mock": "^1.2.1",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2"
   }
 }
