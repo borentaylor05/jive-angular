@@ -12,24 +12,19 @@ class JiveAngular{
     let parts = __filename.split('/');
     this.modulePath = parts.splice(0, parts.length-2).join('/');
     this.nodeModulesPath = this.modulePath + '/node_modules';
+    this.jiveSdkPath = this.nodeModulesPath + '/jive-sdk/bin/jive-sdk.sh';
+    this.createJiveAppCommand = this.jiveSdkPath + ' create app --name="' + this.appName + '"';
     this.templateFilesLocation = this.modulePath + '/template_files';
-  }
-
-  getSdkExecutablePath(){
-    return Finder.from(this.nodeModulesPath).findFiles('jive-sdk.sh');
+    this.templateFilesDestination = 'apps/' + this.appName + '/public/';
+    this.emptyPublicDirectoryCommand = 'rm -r apps/' + this.appName + '/public/*';
   }
 
   generateAngularTemplate(){
     const appName = this.appName;
-
+    const createJiveAppCommand = this.createJiveAppCommand;
     const templateFilesLocation = this.templateFilesLocation;
-    const templateFilesDestination = 'apps/' + appName + '/public/';
-
-    console.log('Finding Jive SDK executable...');
-    const jsdk = this.getSdkExecutablePath();
-
-    const createJiveAppCommand = jsdk + ' create app --name="' + appName + '"';
-    const emptyPublicDirectoryCommand = 'rm -r apps/' + appName + '/public/*';
+    const templateFilesDestination = this.templateFilesDestination;
+    const emptyPublicDirectoryCommand = this.emptyPublicDirectoryCommand;
 
     fs.mkdir('./' + appName, function(){
       console.log('Directory Created...');

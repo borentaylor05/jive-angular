@@ -25,7 +25,7 @@ Once installed:
     * Stores HTML templates in the $templateCache
       * This is necessary because Jive proxies all calls to the file system, meaning you cannot use templateUrl as expected.
     * Implements a JS linter
-    * Implements a watcher so steps 1 and 2 happen on every save
+    * Implements a watcher so steps 1 and 2 happen on every save (only with `gulp`)
 
 **There are several things going on in gulpfile.js so be sure to check it out!**
 
